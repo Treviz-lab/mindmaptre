@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <title>Untitled</title>
+    
+
+  </head>
+    
+  <body>
+  <html lang="fr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Thibaud Renaud - Expert IT Assurance</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 2rem;
+    }
+
+    .page {
+      width: 11.69in;
+      height: 8.27in;
+      background: #0a0a0f;
+      position: relative;
+      overflow: hidden;
+      border-radius: 24px;
+      box-shadow:
+        0 0 0 1px rgba(255, 255, 255, 0.1),
+        0 50px 100px -20px rgba(0, 0, 0, 0.5),
+        0 0 200px rgba(102, 126, 234, 0.3);
+    }
+
+    .page::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='2' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+      opacity: 0.03;
+      pointer-events: none;
+      z-index: 100;
+    }
+
+    .orb {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(80px);
+      opacity: 0.4;
+      animation: float 20s infinite ease-in-out;
+    }
+
+    .orb-1 {
+      width: 500px;
+      height: 500px;
+      background: radial-gradient(circle, #667eea 0%, transparent 70%);
+      top: -200px;
+      left: -200px;
+      animation-delay: 0s;
+    }
+
+    .orb-2 {
+      width: 400px;
+      height: 400px;
+      background: radial-gradient(circle, #764ba2 0%, transparent 70%);
+      bottom: -150px;
+      right: -150px;
+      animation-delay: 5s;
+    }
+
+    .orb-3 {
+      width: 350px;
+      height: 350px;
+      background: radial-gradient(circle, #f093fb 0%, transparent 70%);
+      top: 50%;
+      left: 50%;
+      animation-delay: 10s;
+    }
+
+    @keyframes float {
+
+      0%,
+      100% {
+        transform: translate(0, 0) scale(1);
+      }
+
+      33% {
+        transform: translate(30px, -30px) scale(1.1);
+      }
+
+      66% {
+        transform: translate(-20px, 20px) scale(0.9);
+      }
+    }
+
+    .glass {
+      background: rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(20px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 16px;
+    }
+
+    .card {
+      background: rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(20px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 12px;
+      padding: 1rem;
+      transition: all 0.3s ease;
+    }
+
+    .card:hover {
+      background: rgba(255, 255, 255, 0.08);
+      border-color: rgba(102, 126, 234, 0.3);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 32px rgba(102, 126, 234, 0.2);
+    }
+
+    .badge {
+      background: rgba(102, 126, 234, 0.2);
+      color: #a5b4fc;
+      padding: 6px 14px;
+      border-radius: 20px;
+      font-size: 0.7rem;
+      font-weight: 600;
+      border: 1px solid rgba(102, 126, 234, 0.3);
+      display: inline-block;
+    }
+
+    .text-gradient {
+      background: linear-gradient(135deg, #ffffff 0%, #a5b4fc 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .text-gradient-accent {
+      background: linear-gradient(135deg, #667eea 0%, #f093fb 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    /* Timeline vertical pour les réalisations */
+    .timeline {
+      position: relative;
+    }
+
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      width: 2px;
+      background: linear-gradient(180deg,
+          rgba(102, 126, 234, 0.8) 0%,
+          rgba(240, 147, 251, 0.8) 100%);
+      border-radius: 2px;
+    }
+
+    .timeline-item {
+      position: relative;
+      padding-left: 2rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .timeline-item::before {
+      content: '';
+      position: absolute;
+      left: -4px;
+      top: 6px;
+      width: 10px;
+      height: 10px;
+      background: linear-gradient(135deg, #667eea, #f093fb);
+      border-radius: 50%;
+      box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.2);
+    }
+
+    /* Grille de clients avec effet bento */
+    .clients-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 0.75rem;
+    }
+
+    .client-card {
+      background: rgba(255, 255, 255, 0.04);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 10px;
+      padding: 0.75rem;
+      text-align: center;
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: rgba(255, 255, 255, 0.85);
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .client-card::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(102, 126, 234, 0.2), rgba(240, 147, 251, 0.2));
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    .client-card:hover {
+      background: rgba(102, 126, 234, 0.15);
+      border-color: rgba(102, 126, 234, 0.4);
+      transform: translateY(-3px) scale(1.02);
+      box-shadow: 0 8px 24px rgba(102, 126, 234, 0.3);
+    }
+
+    .client-card:hover::before {
+      opacity: 1;
+    }
+
+    .client-card span {
+      position: relative;
+      z-index: 1;
+    }
+
+    /* Featured clients (larger cards) */
+    .client-card.featured {
+      grid-column: span 2;
+      background: rgba(102, 126, 234, 0.1);
+      border-color: rgba(102, 126, 234, 0.3);
+    }
+
+    /* Section headers avec underline animée */
+    .section-header {
+      position: relative;
+      display: inline-block;
+      padding-bottom: 0.5rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .section-header::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background: linear-gradient(90deg, #667eea, #f093fb);
+      border-radius: 2px;
+    }
+
+    @media print {
+      body {
+        background: #0a0a0f;
+      }
+
+      .page {
+        box-shadow: none;
+        margin: 0;
+      }
+
+      .orb {
+        display: none;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="page">
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+    <div class="orb orb-3"></div>
+
+    <div style="position: relative; z-index: 10; padding: 2.5rem; height: 100%; display: flex; flex-direction: column;">
+      <!-- HEADER -->
+      <div class="flex justify-between items-start mb-6">
+        <div>
+          <h1 class="text-4xl font-black tracking-tight text-gradient mb-3">THIBAUD RENAUD</h1>
+          <div class="flex gap-2 flex-wrap">
+            <span class="badge">Consultant IT</span>
+            <span class="badge">Business Analyst</span>
+            <span class="badge">Interface Métier / IT</span>
+          </div>
+        </div>
+        <div class="text-right text-sm" style="color: rgba(255,255,255,0.7);">
+          <p class="mb-1">📧 thibaud.rnd@gmail.com</p>
+          <p class="mb-1">📱 06 35 45 95 38</p>
+          <p>📍 Niort / Paris</p>
+        </div>
+      </div>
+
+      <!-- MAIN CONTENT - 3 COLUMNS -->
+      <div class="flex-grow grid grid-cols-12 gap-6">
+
+        <!-- LEFT COLUMN - Domaines & Expertise -->
+        <div class="col-span-3 space-y-6">
+          <div class="card">
+            <h3 class="text-xs font-bold uppercase tracking-widest text-gradient-accent section-header">Domaines</h3>
+            <ul class="text-xs space-y-3" style="color: rgba(255,255,255,0.8);">
+              <li class="flex items-center gap-2">
+                <div class="w-2 h-2 rounded-full" style="background: linear-gradient(135deg, #667eea, #764ba2);"></div>
+                <span class="font-medium">Assurance Vie</span>
+              </li>
+              <li class="flex items-center gap-2">
+                <div class="w-2 h-2 rounded-full" style="background: linear-gradient(135deg, #10b981, #34d399);"></div>
+                <span class="font-medium">Santé & Prévoyance</span>
+              </li>
+              <li class="flex items-center gap-2">
+                <div class="w-2 h-2 rounded-full" style="background: linear-gradient(135deg, #f59e0b, #fbbf24);"></div>
+                <span class="font-medium">IARD / Migration</span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="card">
+            <h3 class="text-xs font-bold uppercase tracking-widest text-gradient-accent section-header">Expertise</h3>
+            <ul class="text-xs space-y-2" style="color: rgba(255,255,255,0.7);">
+              <li class="flex items-start gap-2">
+                <span style="color: #667eea;">▸</span>
+                <span>Traduction technico-fonctionnelle</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span style="color: #667eea;">▸</span>
+                <span>Cadrage de besoins complexes</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span style="color: #667eea;">▸</span>
+                <span>Mise en production & Run</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span style="color: #667eea;">▸</span>
+                <span>Accompagnement MOA / Métier</span>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Stats box -->
+          <div class="card" style="background: rgba(102, 126, 234, 0.1); border-color: rgba(102, 126, 234, 0.3);">
+            <div class="text-center">
+              <div class="text-3xl font-black text-gradient-accent">12+</div>
+              <div class="text-xs mt-1" style="color: rgba(255,255,255,0.7);">Clients accompagnés</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- CENTER COLUMN - Clients Grid -->
+        <div class="col-span-5">
+          <h3 class="text-sm font-bold uppercase tracking-widest text-gradient-accent section-header mb-4">Portfolio Clients</h3>
+
+          <div class="clients-grid" style="grid-template-columns: repeat(3, 1fr);">
+            <div class="client-card" style="grid-column: span 3;">
+              <span>CNP ASSURANCES</span>
+            </div>
+            <div class="client-card">
+              <span>SOGECAP</span>
+            </div>
+            <div class="client-card">
+              <span>AON</span>
+            </div>
+            <div class="client-card">
+              <span>SURAVENIR</span>
+            </div>
+            <div class="client-card">
+              <span>AGEAS</span>
+            </div>
+            <div class="client-card" style="grid-column: span 2;">
+              <span>LA BANQUE POSTALE</span>
+            </div>
+            <div class="client-card">
+              <span>ENTIS</span>
+            </div>
+            <div class="client-card">
+              <span>SANTIANE</span>
+            </div>
+            <div class="client-card">
+              <span>ODDO BHF</span>
+            </div>
+            <div class="client-card">
+              <span>IMA</span>
+            </div>
+            <div class="client-card">
+              <span>MIEUX-ÊTRE</span>
+            </div>
+            <div class="client-card">
+              <span>ASSURCOPRO</span>
+            </div>
+          </div>
+
+          <!-- Central value prop -->
+          <div class="mt-4 card" style="background: linear-gradient(135deg, rgba(102, 126, 234, 0.15), rgba(240, 147, 251, 0.15)); border: 1px solid rgba(102, 126, 234, 0.3); padding: 1.25rem; text-align: center;">
+            <div class="text-lg font-black text-gradient mb-2">INTERFACE MÉTIER – IT</div>
+            <p class="text-xs italic" style="color: rgba(255,255,255,0.8);">
+              "Garant de l'alignement entre les enjeux business de l'assurance<br>et la réalité des systèmes d'information."
+            </p>
+          </div>
+
+          <!-- Compétences techniques -->
+          <div class="mt-4 grid grid-cols-2 gap-3">
+            <div class="card" style="padding: 0.75rem;">
+              <h4 class="text-xs font-bold mb-2 text-gradient-accent">Outils & Méthodes</h4>
+              <div class="flex flex-wrap gap-1">
+                <span class="text-xs px-2 py-1 rounded" style="background: rgba(102, 126, 234, 0.2); color: #a5b4fc;">JIRA</span>
+                <span class="text-xs px-2 py-1 rounded" style="background: rgba(102, 126, 234, 0.2); color: #a5b4fc;">Agile</span>
+                <span class="text-xs px-2 py-1 rounded" style="background: rgba(102, 126, 234, 0.2); color: #a5b4fc;">SQL</span>
+                <span class="text-xs px-2 py-1 rounded" style="background: rgba(102, 126, 234, 0.2); color: #a5b4fc;">UML</span>
+              </div>
+            </div>
+            <div class="card" style="padding: 0.75rem;">
+              <h4 class="text-xs font-bold mb-2 text-gradient-accent">Secteurs Métier</h4>
+              <div class="flex flex-wrap gap-1">
+                <span class="text-xs px-2 py-1 rounded" style="background: rgba(240, 147, 251, 0.2); color: #f9a8d4;">Épargne</span>
+                <span class="text-xs px-2 py-1 rounded" style="background: rgba(240, 147, 251, 0.2); color: #f9a8d4;">Santé</span>
+                <span class="text-xs px-2 py-1 rounded" style="background: rgba(240, 147, 251, 0.2); color: #f9a8d4;">IARD</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- RIGHT COLUMN - Réalisations Timeline -->
+        <div class="col-span-4">
+          <h3 class="text-sm font-bold uppercase tracking-widest text-gradient-accent section-header mb-4">Réalisations Clés</h3>
+
+          <div class="timeline">
+            <div class="timeline-item">
+              <h4 class="text-sm font-bold mb-1 text-gradient">Produits Santé</h4>
+              <p class="text-xs mb-1" style="color: rgba(255,255,255,0.7);">Mise en production d'offres complexes santé & prévoyance</p>
+              <div class="flex gap-1 mt-2">
+                <span class="text-xs px-2 py-1 rounded" style="background: rgba(16, 185, 129, 0.2); color: #6ee7b7;">Santé</span>
+                <span class="text-xs px-2 py-1 rounded" style="background: rgba(16, 185, 129, 0.2); color: #6ee7b7;">Production</span>
+              </div>
+            </div>
+
+            <div class="timeline-item">
+              <h4 class="text-sm font-bold mb-1 text-gradient">Web Marque Blanche</h4>
+              <p class="text-xs mb-1" style="color: rgba(255,255,255,0.7);">Déploiement d'espaces clients pour courtiers et mutuelles</p>
+              <div class="flex gap-1 mt-2">
+                <span class="text-xs px-2 py-1 rounded" style="background: rgba(59, 130, 246, 0.2); color: #93c5fd;">Web</span>
+                <span class="text-xs px-2 py-1 rounded" style="background: rgba(59, 130, 246, 0.2); color: #93c5fd;">B2B</span>
+              </div>
+            </div>
+
+            <div class="timeline-item">
+              <h4 class="text-sm font-bold mb-1 text-gradient">Migration IARD</h4>
+              <p class="text-xs mb-1" style="color: rgba(255,255,255,0.7);">Migration structurée de 20 000 contrats (VBA/Access)</p>
+              <div class="flex gap-1 mt-2">
+                <span class="text-xs px-2 py-1 rounded" style="background: rgba(245, 158, 11, 0.2); color: #fcd34d;">IARD</span>
+                <span class="text-xs px-2 py-1 rounded" style="background: rgba(245, 158, 11, 0.2); color: #fcd34d;">Data</span>
+              </div>
+            </div>
+
+            <div class="timeline-item">
+              <h4 class="text-sm font-bold mb-1 text-gradient">Back Assurance Vie</h4>
+              <p class="text-xs mb-1" style="color: rgba(255,255,255,0.7);">Optimisation des flux de gestion back-office</p>
+              <div class="flex gap-1 mt-2">
+                <span class="text-xs px-2 py-1 rounded" style="background: rgba(139, 92, 246, 0.2); color: #c4b5fd;">Back-Office</span>
+              </div>
+            </div>
+
+            <div class="timeline-item">
+              <h4 class="text-sm font-bold mb-1 text-gradient">Front Souscription</h4>
+              <p class="text-xs mb-1" style="color: rgba(255,255,255,0.7);">Refonte du parcours de souscription dématérialisée</p>
+              <div class="flex gap-1 mt-2">
+                <span class="text-xs px-2 py-1 rounded" style="background: rgba(236, 72, 153, 0.2); color: #f9a8d4;">Front</span>
+                <span class="text-xs px-2 py-1 rounded" style="background: rgba(236, 72, 153, 0.2); color: #f9a8d4;">UX</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- FOOTER -->
+      <div class="mt-6" style="border-top: 1px solid rgba(255,255,255,0.1); padding-top: 1rem;">
+        <div class="flex justify-between items-center text-xs font-semibold" style="color: rgba(255,255,255,0.6);">
+          <span>✓ Disponibilité : <span style="color: #10b981;">Immédiate</span></span>
+          <span>✓ Localisation : <span style="color: #667eea;">Flexible</span></span>
+          <span>✓ Expérience : <span style="color: #f093fb;">Confirmé</span></span>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>
+    
+  </body>
+  
+</html>
